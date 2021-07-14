@@ -91,3 +91,26 @@ body{
     background-position: center;
     cursor: pointer;
 }
+.cart{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    background-image: url(images/basket.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.products-counts{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    left: -10px;
+    background-color: #2c71b8;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+}
