@@ -165,5 +165,112 @@ body{
     font-size: 12px;
     line-height: 20px;
 }
-/* ------------------------------------------------------------------------------------------------- */
-
+/* -------------------------------------------------Slide-------------------------------------------- */
+.slide{
+    height: 400px;
+}
+.sidebar{
+    height: 1000px;
+}
+/* -----------------------------------------------H1------------------------------- */
+.title-h1{
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+/* ----------------------------------------------Section-devises-img--------------------------------- */
+.wrapper{
+    border: 1px solid white;
+    height: 650px;
+}
+.device-img{
+    height: 180px;
+    background-color: rgba(255, 255, 255, 0.75);
+    position: relative;
+}
+.img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.incr-btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #2c71b8;
+    background-image:url(images/square-icon-blue.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    cursor: pointer;
+}
+.wish-btn{
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid #2c71b8;
+    background-image:url(images/like-icon-blue.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    cursor: pointer;
+}
+/* --------------------------------------Section-devices-text------------------------------- */
+.container-description{
+    padding: 15px;
+    color: white;
+}
+.title-h2{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.text >p{
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+.bold{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.price{
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.btn-more-deatils{
+    width: 210px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.btn-add-to-cart{
+    width: 210px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
