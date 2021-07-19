@@ -29,12 +29,19 @@ body{
 .col-md-3{
     width: 25%;
 }
+.col-md-4{
+    width: 33%;
+}
+.col-md-5{
+    width: 66%;
+}
 .col-md-6{
     width: 50%;
 }
 .col-md-9{
     width: 75%;
 }
+
 .header{
     padding: 25px 0;
     background-color: rgba(255, 255, 255, 0.75);
@@ -67,11 +74,11 @@ body{
     color: white;
 }
 /* --------------------------------------SubMENU-------------------------- */
-.menu-item li{
+.menu-item{
     display: none;
-    line-height: 40px;
+    
 }
-.menu li:hover .menu-item li{
+.menu li:hover .menu-item{
     display: block;
 }
 .menu li{
@@ -80,16 +87,22 @@ body{
 .menu-item{
     position: absolute;
     left: -1px;
+    z-index: 10;
+
+}
+.menu-item li{
+    width: 202%;
+    height: 40px;
+    background-color: #2c71b8;
+    line-height: 40px;
 }
 .menu-item li a{
     display: block;
-    height: 40px;
-    width: 200%;
     text-decoration: none;
     color: white;
     padding-left: 30px;
     font-size: 21px;
-    background-color: #2c71b8;
+    
 }
 .menu-item li a:hover{
     background-color: white;
@@ -165,112 +178,175 @@ body{
     font-size: 12px;
     line-height: 20px;
 }
-/* -------------------------------------------------Slide-------------------------------------------- */
+/* ----------------------------------------Main-Slide------------------------------- */
 .slide{
+    background-color: rgb(0, 0, 0, 0.2);
     height: 400px;
+    text-align: center;
+    padding-top: 150px;
+    font-weight: lighter;
+    font-size: 100px;
+    color: #fff;
 }
-.sidebar{
-    height: 1000px;
-}
-/* -----------------------------------------------H1------------------------------- */
+/* --------------------------------------------H1, sort---------------------------------------------- */
 .title-h1{
     font-size: 48px;
-    color: white;
+    color: #fff;
     font-weight: bold;
-    margin-top: 25px;
-    margin-bottom: 50px;
 }
-/* ----------------------------------------------Section-devises-img--------------------------------- */
-.wrapper{
-    border: 1px solid white;
-    height: 650px;
+.title-position{
+    margin-bottom: 60px;
 }
-.device-img{
-    height: 180px;
-    background-color: rgba(255, 255, 255, 0.75);
+.sort{
+    width: 270px;
+    height: 40px;
+    background-color: #2c71b8;
+    color: #fff;
+    font-size: 21px;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #fff;
+    padding-left: 20px;
+    outline: none;
+}
+/* -------------------------------------------breadcramb-------------------------------- */
+.breadcrumb{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
+.breadcrumb li{
+    float:left;
+    list-style: none;
+}
+.breadcrumb li::after{
+    content: ">";
+    color: #dee6f2;
+}
+.breadcrumb::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.breadcrumb li a{
+    font-size: 14px;
+    color: #dee6f2;
+    text-decoration: none;
+}
+/* ------------------------------------------Main-Products-images--------------------------- */
+.product-image{
     position: relative;
+    width: 270px;
+    height: 182px;
+    background-color: rgba(255, 255, 255, 0.75);
 }
-.img{
+.product-image img{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.incr-btn{
+.zoom{
     position: absolute;
-    right: 10px;
+    width: 30px;
+    height: 30px;
     top: 10px;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: 1px solid #2c71b8;
-    background-image:url(images/square-icon-blue.png);
-    background-repeat: no-repeat;
-    background-position:center;
-    cursor: pointer;
-}
-.wish-btn{
-    position: absolute;
     right: 10px;
-    top: 50px;
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
     border: 1px solid #2c71b8;
-    background-image:url(images/like-icon-blue.png);
+    background-image: url(images/zoom-blue.png);
     background-repeat: no-repeat;
-    background-position:center;
+    background-position: center;
     cursor: pointer;
 }
-/* --------------------------------------Section-devices-text------------------------------- */
-.container-description{
-    padding: 15px;
-    color: white;
+.like{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 50px;
+    right: 10px;
+    border: 1px solid #2c71b8;
+    background-image: url(images/like-blue.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
 }
-.title-h2{
+.zoom:hover{
+    background-color: #2c71b8;
+    background-image: url(images/zoom-white.png);
+}
+.like:hover{
+    background-color: #2c71b8;
+    background-image: url(images/like-white.png);
+}
+/* -------------------------------------Main-Products-Body-------------------------- */
+.product-body{
+    border: 1px solid #fff;
+    background-color: rgba(44, 113, 184, 0.749);
+    width: 270px;
+    color: #fff;
+    font-size: 21px;
+    margin-bottom: 25px;
+}
+.product-title{
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 15px;
+    padding: 15px 0px 15px 15px;
 }
-.text >p{
-    font-size: 21px;
-    margin-bottom: 15px;
+.product-description{
+    padding: 0px 0px 15px 15px;
 }
-.bold{
-    font-weight: bold;
+.products-features{
+    padding: 0px 0px 0px 15px;
+}
+.products-features p{
+    margin-bottom: 20px;
+}
+.products-features span{
     text-transform: uppercase;
+    font-weight: bold;
 }
-.price{
+.product-price{
     font-size: 48px;
     font-weight: bold;
     text-align: center;
-    margin-top: 25px;
-    margin-bottom: 25px;
 }
-.btn-more-deatils{
+.product-price span{
+    font-size: 30px;
+    vertical-align: super;
+}
+.btn{
+    display: block;
     width: 210px;
     height: 50px;
-    display: block;
-    margin: 0 auto;
+    margin: 0 auto;    
+    background: #2c71b8;
+    font-size: 21px;
+    font-family:  'Roboto', sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.btn-more-details{
+    margin-top: 20px;
     margin-bottom: 15px;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    font-size: 21px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
 }
-.btn-add-to-cart{
-    width: 210px;
-    height: 50px;
-    display: block;
-    margin: 0 auto;
-    background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    font-size: 21px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
+.btn-add-cart{
+    position: relative;
+    margin-bottom: 30px;
 }
+.btn-add-cart::after{
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 7px;
+    width: 20px;
+    height: 20px;
+    background-image: url(images/cart-icon-white.png);
+    background-repeat: no-repeat;
+}
+.btn:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+  
