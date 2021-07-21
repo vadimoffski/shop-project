@@ -196,7 +196,35 @@ body{
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid #fff;
     border-top: none;
+    padding: 30px;
 }
+.filter-text{
+    color: #fff;
+    font-size: 21px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.checkbox-type{
+    margin-bottom: 60px;
+}
+.checkbox-style input[type="checkbox"]{
+    display: none;
+}
+.checkbox-style label{
+    padding-left: 20px;
+}
+.checkbox-style label::before{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+}
+.checkbox-style input[type="checkbox"]:checked + label::before{
+    background-color: #fff;
+}
+
 /* --------------------------------------------H1, sort---------------------------------------------- */
 .title-h1{
     font-size: 48px;
