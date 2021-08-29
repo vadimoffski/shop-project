@@ -365,6 +365,10 @@ body{
     background-position: center;
     cursor: pointer;
 }
+.likeClicked{
+    background-color: #2c71b8;
+    background-image: url(images/like-white.png);
+}
 .zoom:hover{
     background-color: #2c71b8;
     background-image: url(images/zoom-white.png);
