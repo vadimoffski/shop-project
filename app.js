@@ -36,7 +36,7 @@ function closeModal(){
   modal.classList.add('hide');
   modal.classList.remove('show');
 }
-
+// ...closeModal..
 // // change quality program
 // let decrementBtns = document.querySelectorAll(".decrement-button")[0];
 // let incrementBtns = document.querySelectorAll(".increment-button")[0];
