@@ -10,9 +10,10 @@ addToCartBtns.forEach((item) =>
 
 let likeBtns = document.querySelectorAll(".like");
 likeBtns.forEach((item) =>
-item.addEventListener('click', function(){
-  item.classList.toggle('likeClicked');
-}));
+  item.addEventListener('click', function(){
+  this.classList.toggle('likeClicked');
+  })
+);
 
 
 
