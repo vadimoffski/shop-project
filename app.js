@@ -36,6 +36,30 @@ function closeModal(){
   modal.classList.add('hide');
   modal.classList.remove('show');
 }
+
+//scroll
+let scrollHeight = Math.max(
+  document.body.scrollHeight, document.documentElement.scrollHeight,
+  document.body.offsetHeight, document.documentElement.offsetHeight,
+  document.body.clientHeight, document.documentElement.clientHeight
+);
+console.log('Полная высота документа с прокручиваемой частью: ' + scrollHeight);//2975px
+
+console.log('Текущая прокрутка сверху: ' + window.pageYOffset);//650
+
+window.addEventListener('scroll', scrollToModal);
+
+function scrollToModal(){
+  if (window.pageYOffset >= 500 && window.pageYOffset < 900){
+    openModal();
+  } else{
+    closeModal();
+  }
+}
+
+
+
+
 // ...closeModal..
 // // change quality program
 // let decrementBtns = document.querySelectorAll(".decrement-button")[0];
