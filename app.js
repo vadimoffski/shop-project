@@ -38,29 +38,14 @@ function closeModal(){
 }
 
 //scroll
-let scrollHeight = Math.max(
-  document.body.scrollHeight, document.documentElement.scrollHeight,
-  document.body.offsetHeight, document.documentElement.offsetHeight,
-  document.body.clientHeight, document.documentElement.clientHeight
-);
-console.log('Полная высота документа с прокручиваемой частью: ' + scrollHeight);//2975px
+window.addEventListener('scroll', showModalByScroll);
 
-console.log('Текущая прокрутка сверху: ' + window.pageYOffset);//650
-
-window.addEventListener('scroll', scrollToModal);
-
-function scrollToModal(){
-  if (window.pageYOffset >= 500 && window.pageYOffset < 900){
+function showModalByScroll(){
+  if(window.pageYOffset >= document.body.scrollHeight/2){
     openModal();
-  } else{
-    closeModal();
   }
 }
 
-
-
-
-// ...closeModal..
 // // change quality program
 // let decrementBtns = document.querySelectorAll(".decrement-button")[0];
 // let incrementBtns = document.querySelectorAll(".increment-button")[0];
