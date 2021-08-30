@@ -77,4 +77,8 @@ decrementBtns.forEach((item, i) => item.addEventListener("click", function () {
   toggleButtonsState(nextValue, decrementBtns[i], item);
 }));
 
+//slider slick
+$(".slider-block").slick()
+
+
 
