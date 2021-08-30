@@ -47,38 +47,34 @@ function showModalByScroll(){
   }
 }
 
-// // change quality program
-// let decrementBtns = document.querySelectorAll(".decrement-button")[0];
-// let incrementBtns = document.querySelectorAll(".increment-button")[0];
-// let quantityInput = document.querySelectorAll(".product-quantity input")[0];
+// change quality program
+let decrementBtns = document.querySelectorAll(".decrement-button");
+let incrementBtns = document.querySelectorAll(".increment-button");
+let quantityInput = document.querySelectorAll(".product-quantity input");
+let minCount = 1;
+let maxCount = 5;
 
-// console.log(decrementBtns);
-// console.log(incrementBtns);
-// console.log(quantityInput);
+function toggleButtonsState(count, decrementBtn, incrementBtn){
+  decrementBtn.disabled = count <= minCount;
+  incrementBtn.disabled = count >= maxCount;
+}
 
-// incrementBtns.addEventListener("click", function () {
-//     // quantityInput.value = +quantityInput.value + 1;
-//     let currentValue = +quantityInput.value;
-//     let nextValue = currentValue + 1;
-//     quantityInput.value = nextValue;
-    
-//     if (nextValue <= 1) {
-//         decrementBtns.disabled = true;
-//       } else {
-//         decrementBtns.disabled = false;
-//       }
-//   });
-// decrementBtns.addEventListener("click", function () {
-//     // quantityInput.value = +quantityInput.value + 1;
-//     let currentValue = +quantityInput.value;
-//     let nextValue = currentValue - 1;
-//     quantityInput.value = nextValue;
+quantityInput.forEach((item, i) =>
+  toggleButtonsState(item.value, decrementBtns[i], incrementBtns[i])
+);
 
-//     if (nextValue <= 1) {
-//         decrementBtns.disabled = true;
-//       } else {
-//         decrementBtns.disabled = false;
-//       }
-//   });
+incrementBtns.forEach((item, i) => item.addEventListener("click", function() {
+  let currentValue = +quantityInput[i].value;
+  let nextValue = currentValue + 1;
+  quantityInput[i].value = nextValue;
+  toggleButtonsState(nextValue, decrementBtns[i], item);
+}));
+
+decrementBtns.forEach((item, i) => item.addEventListener("click", function () {
+  let currentValue = +quantityInput[i].value;
+  let nextValue = currentValue - 1;
+  quantityInput[i].value = nextValue;
+  toggleButtonsState(nextValue, decrementBtns[i], item);
+}));
 
 
