@@ -78,7 +78,11 @@ decrementBtns.forEach((item, i) => item.addEventListener("click", function () {
 }));
 
 //slider slick
-$(".slider-block").slick()
+$(".slider-block").slick({
+  dots: true,
+  autoplay: true,
+  autoplaySpeed: 1500,
+});
 
 
 
