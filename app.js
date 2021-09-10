@@ -48,34 +48,18 @@ function showModalByScroll(){
 }
 
 // change quality program
-let decrementBtns = document.querySelectorAll(".decrement-button");
-let incrementBtns = document.querySelectorAll(".increment-button");
-let quantityInput = document.querySelectorAll(".product-quantity input");
-let minCount = 1;
-let maxCount = 5;
+// let decrementBtns = document.querySelectorAll(".decrement-button");
+// let incrementBtns = document.querySelectorAll(".increment-button");
+// let quantityInput = document.querySelectorAll(".product-quantity input");
+// let minCount = 1;
+// let maxCount = 5;
 
-function toggleButtonsState(count, decrementBtn, incrementBtn){
-  decrementBtn.disabled = count <= minCount;
-  incrementBtn.disabled = count >= maxCount;
-}
+// function toggleButtonsState(count, decrementBtn, incrementBtn){
+//   decrementBtn.disabled = count <= minCount;
+//   incrementBtn.disabled = count >= maxCount;
+// }
 
-quantityInput.forEach((item, i) =>
-  toggleButtonsState(item.value, decrementBtns[i], incrementBtns[i])
-);
 
-incrementBtns.forEach((item, i) => item.addEventListener("click", function() {
-  let currentValue = +quantityInput[i].value;
-  let nextValue = currentValue + 1;
-  quantityInput[i].value = nextValue;
-  toggleButtonsState(nextValue, decrementBtns[i], item);
-}));
-
-decrementBtns.forEach((item, i) => item.addEventListener("click", function () {
-  let currentValue = +quantityInput[i].value;
-  let nextValue = currentValue - 1;
-  quantityInput[i].value = nextValue;
-  toggleButtonsState(nextValue, decrementBtns[i], item);
-}));
 
 //slider slick
 $(".slider-block").slick({
@@ -84,5 +68,68 @@ $(".slider-block").slick({
   autoplaySpeed: 1500,
 });
 
+// ----------COUNTER FUNCTION CONSTRUCTOR----------------------------
+// let audi = {
+//   year:"2013",
+//   model:"A4",
+//   color:"black",
+// }
 
+// let bmw = {
+//   year:"2011",
+//   model:"328",
+//   color:"grey",
+// }
 
+// function Car(year, model, color){
+//   this.year = year;
+//   this.model = model;
+//   this.color = color;
+// }
+
+// let audi = new Car("2014", "A4", "black");
+// console.log(audi);
+
+//Calculator
+let decrementBtns = document.querySelectorAll(".decrement-button");
+let incrementBtns = document.querySelectorAll(".increment-button");
+let quantityInput = document.querySelectorAll(".product-quantity input");
+
+function Counter(incrementBtn, decrementBtn, inputField, minCount=1, maxCount=5){
+  this.domRefs = {
+    incrementBtn,
+    decrementBtn,
+    inputField,
+  };
+  this.toggleButtonsState = function(){
+    let count = this.domRefs.inputField.value;
+    this.domRefs.decrementBtn.disabled = count <= minCount;
+    this.domRefs.incrementBtn.disabled = count >= maxCount;
+  };
+  
+  this.toggleButtonsState();
+
+  this.increment = function() {
+    let currentValue = +this.domRefs.inputField.value;
+    let nextValue = currentValue + 1;
+    this.domRefs.inputField.value = nextValue;
+    this.toggleButtonsState();
+  };
+  
+  this.decrement = function() {
+    let currentValue = +this.domRefs.inputField.value;
+    let nextValue = currentValue - 1;
+    this.domRefs.inputField.value = nextValue;
+    this.toggleButtonsState();
+  };
+
+  this.domRefs.incrementBtn.addEventListener("click", this.increment.bind(this));
+  this.domRefs.decrementBtn.addEventListener("click", this.decrement.bind(this));
+}
+
+// const counter = new Counter(incrementBtns, decrementBtns, quantityInput);
+// console.log(counter);
+
+let counters = [];
+
+quantityInput.forEach((countItem, i) => (counters[i] = new Counter(incrementBtns[i], decrementBtns[i], countItem)));
